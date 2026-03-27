@@ -4,25 +4,25 @@ import { defineConfig } from 'vite'
 export default defineConfig({
   plugins: [
     vercelBuild({
+      entry: './src/api.ts',
       minify: false,
       vercel: {
+        name: 'api',
         function: {
           shouldAddHelpers: false,
           maxDuration: 10,
         },
-        functions: [
-          {
-            name: 'api',
-            entry: './src/api.ts',
-          },
-          {
-            name: 'auth',
-            entry: './src/auth.ts',
-            function: {
-              maxDuration: 30,
-            },
-          },
-        ],
+      },
+    }),
+    vercelBuild({
+      entry: './src/auth.ts',
+      minify: false,
+      vercel: {
+        name: 'auth',
+        function: {
+          shouldAddHelpers: false,
+          maxDuration: 30,
+        },
       },
     }),
   ],

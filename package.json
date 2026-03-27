@@ -7,7 +7,7 @@
     "build": "vite build"
   },
   "devDependencies": {
-    "@hono/vite-build": "file:hono-vite-build-1.9.3.tgz",
+    "@hono/vite-build": "file:hono-vite-build-1.10.1.tgz",
     "@types/bun": "latest",
     "vite": "^7.3.1"
   },
